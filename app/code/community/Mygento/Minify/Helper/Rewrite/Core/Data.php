@@ -47,8 +47,10 @@ class Mygento_Minify_Helper_Rewrite_Core_Data extends Mage_Core_Helper_Data
                 switch ($content_type) {
                     case 'css':
                         $minifier = new MatthiasMullie\Minify\CSS($result);
+                        break;
                     case 'js':
                         $minifier = new MatthiasMullie\Minify\JS($result);
+                        break;
                 }
                 $minifier->minify($targetFile);
                 Varien_Profiler::stop('minify_file_' . $targetFile);
